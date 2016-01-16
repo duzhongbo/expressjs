@@ -15,6 +15,11 @@ app.get('/random.text', function (req, res) {
   res.send('random.text');
 });
 
+// 匹配 acd 和 abcd
+app.get('/ab?cd', function(req, res) {
+  res.send('ab?cd');
+});
+
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
