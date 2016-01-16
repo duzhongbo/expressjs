@@ -81,6 +81,11 @@ app.route('/book')
     res.send('Update the book');
   });
 
+//
+var birds = require('./birds');
+app.use('/birds', birds);
+
+
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
