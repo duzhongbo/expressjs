@@ -25,6 +25,14 @@ app.get('/ab+cd', function(req, res) {
   res.send('ab+cd');
 });
 
+// 使用多个回调函数处理路由（记得指定 next 对象）：
+app.get('/example/b', function (req, res, next) {
+  console.log('response will be sent by the next function ...');
+  next();
+}, function (req, res) {
+  res.send('Hello from B!');
+});
+
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
