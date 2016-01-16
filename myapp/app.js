@@ -10,6 +10,11 @@ app.get('/about', function (req, res) {
   res.send('about');
 });
 
+// 匹配 /random.text 路径的请求
+app.get('/random.text', function (req, res) {
+  res.send('random.text');
+});
+
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
