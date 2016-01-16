@@ -20,6 +20,11 @@ app.get('/ab?cd', function(req, res) {
   res.send('ab?cd');
 });
 
+// 匹配 abcd、abbcd、abbbcd等
+app.get('/ab+cd', function(req, res) {
+  res.send('ab+cd');
+});
+
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
